@@ -1,0 +1,26 @@
+# Glossary
+
+- **Take:** one recorded trial, kept whole for splitting and scoring.
+- **Person:** participant identified only by an OP code. No identity mapping ships.
+- **Session:** a group of takes collected together.
+- **Starter:** three complete example takes for trying the loader before downloading the full dataset.
+- **EMG:** surface electromyography, eight channels of band sensor values.
+- **IMU:** six band motion channels, three acceleration and three gyroscope readings.
+- **PPG:** two optical pulse channels.
+- **Mocap:** optical motion capture from skin markers. A marker is not a joint centre.
+- **Canonical markers:** a common named order of 23 markers; automatic identity corrections and validity masks are included.
+- **Contact estimate:** automatic fingertip proximity label, not measured touch.
+- **Lag:** estimated time offset between band IMU and mocap, not physiological EMG latency.
+- **LOSO:** leave one person out; each fold tests one person and validates on the next person.
+- **GOLD, STANDARD, EXTENDED:** take quality tiers defined in `QUALITY_TIERS.md`.
+- **CAL:** the first 10 seconds of a take, used by the T3 scorer to calibrate the vision-to-mocap transform (`eval/TASKS.md`).
+- **SCORE:** an internal held-out take set from the earlier vision benchmark. Baseline recipes were selected using only the 430 takes outside it, before any SCORE take was read. SCORE membership is not distributed; every take is scored in leave-one-person-out evaluation.
+- **MediaPipe:** automatic camera hand keypoints, with no human verification.
+- **MCAP:** message container carrying original camera video and related streams.
+- **C3D:** motion-capture exchange file; HDF5 is the main time and mask reference.
+- **Vendor-kept:** a source recording retained by the vendor before release selection.
+- **Recording window:** the selected time span of a take; duration includes sensor gaps.
+- **Vendor:** the commercial data-collection company that collected the recordings for Encord.
+- **Base URL:** the public HTTPS address passed to `tools/download.py`. It is given in the bucket-root README, outside this checksummed tree.
+- **CC BY 4.0:** Creative Commons Attribution 4.0 International, the licence for every file that is not a source code file, including the data and documentation (`LICENSE`).
+- **Apache-2.0:** Apache License 2.0, the licence for source code files: every `*.py` file and every requirements file such as `requirements.txt` (`LICENSE-CODE`).

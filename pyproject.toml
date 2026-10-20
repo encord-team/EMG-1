@@ -1,0 +1,17 @@
+[project]
+name = "emg1-release"
+version = "1.0.1"
+description = "Download scripts and file indexes for the EMG-1 datasets (wrist EMG with egocentric video, and with hand motion capture)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Encord", email = "support@encord.com" }]
+dependencies = []
+
+[dependency-groups]
+# scripts/build_index.py only; scripts/download.py and scripts/list_release.py need nothing beyond the standard library.
+dev = ["pyarrow>=15"]
+
+[tool.uv]
+package = false

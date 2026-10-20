@@ -1,0 +1,71 @@
+{
+  "id": "8ch-mocap",
+  "dataset": "EMG-1 8-channel dataset",
+  "tagline": "8-channel forearm EMG, IMU and PPG with OptiTrack hand markers and stereo video during free hand movement",
+  "version": "v1.0.1",
+  "release_date": "2026-10-20",
+  "bucket": "emg1-8ch-mocap-release",
+  "base_url": "https://pub-91c561c2860c47e9b776fa8dff99271e.r2.dev",
+  "dest": "emg1-8ch-v1.0.1",
+  "unit": "take",
+  "has_raw": false,
+  "sha256sums_sha256": "f3b335e64fea3edd31da96b6fc577eb23591bd87150f21d30b10c57e7393f8a0",
+  "manifest_sha256": "4e966de81a62a30cbd9907fb9ae7ca5b3e1694c1ae783297b6a0a74b04868ca7",
+  "files": 3826,
+  "bytes": 217300919215,
+  "takes": 920,
+  "people": 12,
+  "sessions": 74,
+  "hours": 15.036,
+  "supplement": {
+    "name": "EMG-1 fusion hand-pose predictions (Wearable Devices), supplement v1",
+    "prefix": "supplements/wd-fusion-predictions/v1",
+    "sha256sums_sha256": "80394007f3ffa446f0b0b743784ce26865c94dab67e2b8cccf08e3522eb383dd",
+    "dest": "emg1-wd-fusion-v1",
+    "files": 401,
+    "bytes": 194652681,
+    "command": "python3 scripts/download.py 8ch-mocap supplement",
+    "readme_url": "https://pub-91c561c2860c47e9b776fa8dff99271e.r2.dev/supplements/wd-fusion-predictions/v1/README.md"
+  },
+  "subsets": {
+    "starter": {
+      "files": 147,
+      "bytes": 1345938632,
+      "command": "python3 scripts/download.py 8ch-mocap starter"
+    },
+    "benchmark": {
+      "files": 1842,
+      "bytes": 32050534342,
+      "command": "python3 scripts/download.py 8ch-mocap benchmark"
+    },
+    "novideo": {
+      "files": 2904,
+      "bytes": 35270240798,
+      "command": "python3 scripts/download.py 8ch-mocap novideo"
+    },
+    "full": {
+      "files": 3827,
+      "bytes": 217300919215,
+      "command": "python3 scripts/download.py 8ch-mocap full"
+    },
+    "supplement": {
+      "files": 401,
+      "bytes": 194652681,
+      "command": "python3 scripts/download.py 8ch-mocap supplement"
+    }
+  },
+  "generated_utc": "2026-10-20T18:21:54Z",
+  "bucket_listing": {
+    "source": "bucket_structure.json",
+    "objects": 4229,
+    "bytes": 217495951704,
+    "listed_utc": "2026-10-20T18:15:47Z",
+    "method": "Cloudflare API GET /accounts/{account_id}/r2/buckets/{bucket}/objects over every page, aggregated per collapsed path",
+    "only_in_bucket": [
+      "BUCKET_README.md",
+      "v1.0.1/SHA256SUMS"
+    ],
+    "only_in_manifests": [],
+    "mismatched": []
+  }
+}
