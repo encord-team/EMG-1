@@ -1,0 +1,13 @@
+# Load the release
+
+Install `requirements.txt` in a clean environment. The take and derived files open with h5py >= 3.0 / HDF5 >= 1.10. The pinned PyTorch wheel uses the CPU index in `requirements.txt`.
+
+From the release root, run `python -B loader/quickstart.py . --starter` for a four-window wrist-frame batch and a masked model loss. The starter layout is self-contained: set `takes_dir="starter"` and `sources` from `starter/takes.json`, as the quickstart does. For the T1 contact preview, run `python -B loader/quickstart.py . --starter --task T1`. For a full download, omit `--starter`. Run `python -B loader/tests.py .` on either layout. `missing="skip"` drops absent takes; the default `missing="error"` raises with the missing path.
+
+`EMGDataset` uses 200 EMG samples per window (about 100 ms) and a 200-sample default stride (nominally 10 Hz). Set `stride=100` for the official T2 grid (nominally 20 Hz). T1 uses the separate probe feature and glitch-filter path in `eval/probe_targets.py`. `target_frame="wrist"` gives a WR-origin coordinate frame with x from ULN to RAD, z normal to the WR-RAD-ULN plane and y equal to z cross x. Invalid wrist basis masks every marker. `target_frame="world"` preserves the original canonical room-frame output for older code. The quickstart uses wrist. The world frame is in metres, apparently Y-up, but its origin and stability across sessions have not been established. It is a poor EMG target because room placement dominates its variation. The wrist frame still includes wrist flexion.
+
+`align=True` subtracts `applied_lag_ms` from band timestamps only when lag status is `measured`. Positive lag means a band sample stamped at t corresponds to mocap at t minus lag. Other lag statuses apply zero and return `lag_measured=False`. Raw HDF5 timestamps remain unchanged. IMU selects the nearest row within 3.75 ms; mocap selects the nearest row to the window end within half a 120 Hz interval. Ties use the earlier row. A gap above 0.75 ms invalidates the following EMG row. Missing data are zeroed and indicated by masks.
+
+Each split normalization file was fit on its own train takes. DataLoader workers cache up to 16 open file handles and time axes independently, and the reader slices only the needed IMU and EMG rows. Use `num_workers` according to local storage speed, with a modest value such as 2 or 4. `TakeReader.windows()` and `EMGDataset.take_windows(source)` iterate a take with the same alignment and mask rules.
+
+If `normalize=True`, a missing `splits/<split>_norm.json` raises `FileNotFoundError`. Passing explicit `sources` without `split` warns that default_smoke normalization will be used; set `split` explicitly. `missing="skip"` warns if it leaves no takes.

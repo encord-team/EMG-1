@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below. It has no DOI yet; a DOI may be added in a later version."
+title: "EMG-1 8-channel dataset"
+abstract: "Synchronized left-hand surface EMG, band IMU and PPG, optical motion capture and external stereo video of free hand movement, for fingertip proximity and hand-pose research."
+type: dataset
+version: 1.0.1
+date-released: 2026-10-20
+license: CC-BY-4.0
+authors:
+  - given-names: Vineeth
+    family-names: Velmurugan
+    affiliation: Encord
+contact:
+  - name: Encord
+    email: support@encord.com
+keywords:
+  - electromyography
+  - surface EMG
+  - hand motion capture
+  - fingertip proximity
+  - hand pose
+  - stereo video

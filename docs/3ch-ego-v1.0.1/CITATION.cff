@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "EMG-1 3-channel dataset"
+version: "1.0.1"
+date-released: "2026-10-20"
+abstract: "Wrist surface EMG, inertial and pulse recordings with egocentric head and wrist video, neural stereo depth, quality tiers and weak vendor task annotations, recorded during textile work in a factory. Collected for Encord by a commercial data-collection vendor."
+authors:
+  - given-names: "Vineeth"
+    family-names: "Velmurugan"
+    affiliation: "Encord"
+contact:
+  - name: "Encord"
+    email: "support@encord.com"
+keywords:
+  - electromyography
+  - surface EMG
+  - wearable sensing
+  - egocentric video
+  - textile work
+license: CC-BY-4.0

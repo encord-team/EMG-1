@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[oc]
+.venv/
+
+# Downloaded release trees and the index builder's cache (never commit data)
+emg1-3ch-*/
+data/
+.cache/
+urls.txt
+frame.*
+
+# OS
+.DS_Store

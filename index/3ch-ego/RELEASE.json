@@ -1,0 +1,58 @@
+{
+  "id": "3ch-ego",
+  "dataset": "EMG-1 3-channel dataset",
+  "tagline": "3-channel wrist EMG, IMU and PPG with egocentric video during factory textile work",
+  "version": "v1.0.1",
+  "release_date": "2026-10-20",
+  "bucket": "emg1-3ch-ego-release",
+  "base_url": "https://pub-b29550bc5a1c44e08e91624ebf1cb243.r2.dev",
+  "dest": "emg1-3ch-v1.0.1",
+  "unit": "clip",
+  "has_raw": true,
+  "sha256sums_sha256": "724dc60071da364309cb69f7d62a3c608dd4310f6cb3570e66c9d1a86e282ed0",
+  "manifest_sha256": "80e22ed9e76ff9a8c15204fa597f9be0a5f12cd442dfdbf53f8cbef45cf507a0",
+  "files": 44416,
+  "bytes": 313559220408,
+  "clips": 4916,
+  "raw_objects": 4916,
+  "raw_bytes": 43219247656226,
+  "stations": 7,
+  "clip_hours_with_emg": 397.263,
+  "both_wrist_quality_hours": 271.778,
+  "subsets": {
+    "starter": {
+      "files": 5082,
+      "bytes": 1471472019,
+      "command": "python3 scripts/download.py 3ch-ego starter"
+    },
+    "training": {
+      "files": 14921,
+      "bytes": 297569264676,
+      "command": "python3 scripts/download.py 3ch-ego training"
+    },
+    "full": {
+      "files": 44417,
+      "bytes": 313559220408,
+      "command": "python3 scripts/download.py 3ch-ego full"
+    },
+    "raw": {
+      "files": 4916,
+      "bytes": 43219247656226,
+      "command": "python3 scripts/download.py 3ch-ego raw"
+    }
+  },
+  "generated_utc": "2026-10-20T18:21:41Z",
+  "bucket_listing": {
+    "source": "bucket_structure.json",
+    "objects": 49334,
+    "bytes": 43532812633973,
+    "listed_utc": "2026-10-20T18:16:58Z",
+    "method": "Cloudflare API GET /accounts/{account_id}/r2/buckets/{bucket}/objects over every page, aggregated per collapsed path",
+    "only_in_bucket": [
+      "README.md",
+      "v1.0.1/SHA256SUMS"
+    ],
+    "only_in_manifests": [],
+    "mismatched": []
+  }
+}
